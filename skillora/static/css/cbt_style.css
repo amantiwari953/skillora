@@ -1,0 +1,140 @@
+body{
+    background: #f5f7fb;
+}
+
+/* Header */
+
+.cbt-header{
+    background: #0d6efd;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timer-box{
+    background: white;
+    color: #0d6efd;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Question Card */
+
+.question-card{
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    min-height: 450px;
+}
+
+/* Palette */
+
+.palette-card{
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.palette-grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 8px;
+}
+
+/* Question Status */
+
+.status{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.green{
+    background: green;
+}
+
+.red{
+    background: red;
+}
+
+.gray{
+    background: gray;
+}
+
+.purple{
+    background: purple;
+}
+
+/* Score Circle */
+
+.score-circle{
+    width: 150px;
+    height: 150px;
+    border: 10px solid #0d6efd;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+/* Review Section */
+
+.review-card{
+    border-left: 5px solid green;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f8f9fa;
+}
+
+.review-wrong{
+    border-left: 5px solid red;
+}
+
+/* Options */
+
+.form-check{
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.form-check:hover{
+    background: #f1f5ff;
+}
+
+.form-check-input{
+    transform: scale(1.2);
+}
+
+/* Buttons */
+
+.btn{
+    border-radius: 10px;
+}
+
+/* Responsive */
+
+@media(max-width:991px){
+
+    .cbt-header{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .palette-grid{
+        grid-template-columns: repeat(5,1fr);
+    }
+
+}

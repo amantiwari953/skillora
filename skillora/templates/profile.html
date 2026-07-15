@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card shadow p-4">
+
+                <h2 class="text-center text-primary mb-4">
+                    My Profile
+                </h2>
+
+                <table class="table">
+
+                    <tr>
+                        <th>Username</th>
+                        <td>{{ user.username }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ user.email }}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Address</th>
+                        <td>{{ profile.address }}</td>
+                    </tr>
+
+                </table>
+
+                <div class="text-center">
+                    <a href="/" class="btn btn-primary">
+                        Back Home
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

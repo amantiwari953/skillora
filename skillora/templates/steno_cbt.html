@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/cbt_style.css' %}">
+
+<div class="container-fluid p-0"  id="testContainer">
+
+    <!-- Top Header -->
+    <div class="cbt-header shadow">
+        <div>
+            <h4 class="m-0">Skillora - Stenographer English Mock Test</h4>
+            <small>PYQ Set 1 | Total Questions: 50</small>
+        </div>
+
+        <div class="timer-box">
+            ⏰ Time Left:
+            <span id="timer">60:00</span>
+        </div>
+    </div>
+
+
+    <div class="row g-0">
+
+        <!-- Left Side Question Area -->
+        <div class="col-lg-9 p-4">
+
+            <div class="question-card shadow">
+
+                <div class="d-flex justify-content-between mb-3">
+                    <h5 id="questionNo">
+                        Question 1 of 50
+                    </h5>
+
+                    <span class="badge bg-primary">
+                        1 Mark
+                    </span>
+                </div>
+
+                <hr>
+
+                <!-- Question -->
+                <h5 id="questionText">
+                    Loading Question...
+                </h5>
+
+                <!-- Options -->
+                <div id="optionsContainer" class="mt-4">
+
+                    <!-- JS se options aayenge -->
+
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="mt-4 d-flex flex-wrap gap-2">
+
+                <button class="btn btn-secondary"
+                        onclick="previousQuestion()">
+                    Previous
+                </button>
+
+                <button class="btn btn-danger"
+                        onclick="clearResponse()">
+                    Clear Response
+                </button>
+
+                <button class="btn btn-warning text-dark"
+                        onclick="markReview()">
+                    Mark for Review
+                </button>
+
+                <button class="btn btn-success"
+                        onclick="saveNext()">
+                    Save & Next
+                </button>
+
+                <button class="btn btn-primary"
+                        onclick="submitTest()">
+                    Submit Test
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right Palette -->
+        <div class="col-lg-3 bg-light p-3">
+
+            <div class="palette-card shadow">
+
+                <h5 class="text-center mb-3">
+                    Question Palette
+                </h5>
+
+                <div id="palette"
+                     class="palette-grid">
+
+                    <!-- JS se 1-50 buttons banenge -->
+
+                </div>
+
+                <hr>
+
+                <div class="mt-3">
+
+                    <p>
+                        <span class="status green"></span>
+                        Answered
+                    </p>
+
+                    <p>
+                        <span class="status red"></span>
+                        Not Answered
+                    </p>
+
+                    <p>
+                        <span class="status gray"></span>
+                        Not Visited
+                    </p>
+
+                    <p>
+                        <span class="status purple"></span>
+                        Review
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Result Modal -->
+
+<div class="modal fade"
+     id="resultModal"
+     tabindex="-1">
+
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header bg-success text-white">
+
+                <h5>
+                    Test Result
+                </h5>
+
+            </div>
+
+            <div class="modal-body">
+
+                <!-- Circle Score -->
+                <div class="text-center">
+
+                    <div class="score-circle"
+                         id="scoreCircle">
+
+                        0%
+
+                    </div>
+
+                    <h4 id="scoreText">
+                        Score: 0/50
+                    </h4>
+
+                </div>
+
+                <hr>
+
+                <div class="row text-center">
+
+                    <div class="col-md-3">
+                        <h5 id="correctCount">0</h5>
+                        <small>Correct</small>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5 id="wrongCount">0</h5>
+                        <small>Wrong</small>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5 id="skipCount">0</h5>
+                        <small>Skipped</small>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5 id="percentage">0%</h5>
+                        <small>Percentage</small>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <h5>
+                    Answer Review
+                </h5>
+
+                <div id="reviewSection">
+
+                    <!-- JS se review aayega -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="{% static 'js/steno_questions.js' %}"></script>
+<script src="{% static 'js/cbt_script.js' %}"></script>
+
+{% endblock %}

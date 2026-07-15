@@ -1,0 +1,288 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+
+:root{
+    --primary:#0d6efd;
+}
+
+/* Banner */
+.trade-banner{
+    width:100%;
+    height:450px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Heading */
+.trade-heading{
+    font-size:3rem;
+    font-weight:800;
+    background:linear-gradient(45deg,#0d6efd,#4da3ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.trade-subtitle{
+    color:#6c757d;
+    font-size:1.1rem;
+}
+
+/* Section */
+.chapter-section{
+    background:#f8f9fa;
+    border-radius:20px;
+    padding:40px 20px;
+}
+
+/* Cards */
+.chapter-card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:all 0.4s ease;
+    background:#fff;
+}
+
+.chapter-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(13,110,253,0.25);
+}
+
+.chapter-card .card-body{
+    padding:30px 20px;
+}
+
+.chapter-icon{
+    width:80px;
+    height:80px;
+    margin:auto;
+    margin-bottom:15px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(13,110,253,0.1);
+    color:#0d6efd;
+    font-size:36px;
+}
+
+.chapter-card h4{
+    font-weight:700;
+}
+
+.chapter-card p{
+    color:#6c757d;
+}
+
+/* Button */
+.start-btn{
+    border-radius:50px;
+    padding:10px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.start-btn:hover{
+    transform:scale(1.05);
+}
+
+/* Mobile */
+@media(max-width:576px){
+
+    .trade-banner{
+        height:180px;
+    }
+
+    .trade-heading{
+        font-size:2rem;
+    }
+
+    .chapter-icon{
+        width:65px;
+        height:65px;
+        font-size:28px;
+    }
+}
+
+</style>
+
+<!-- Banner -->
+<div class="container mt-4">
+
+    <img src="{% static 'images/slide4.png' %}"
+         class="trade-banner"
+         alt="Electrician Banner">
+
+</div>
+
+<!-- Heading -->
+<section class="py-5 text-center">
+
+    <div class="container">
+
+        <h1 class="trade-heading">
+            Electrician Mock Test
+        </h1>
+
+        <p class="trade-subtitle">
+            Practice chapter-wise ITI Electrician MCQs online and improve your exam preparation.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Chapters -->
+<section class="pb-5">
+
+<div class="container chapter-section">
+
+<div class="row g-4">
+
+    <!-- Basic Electrical -->
+    <div class="col-md-4">
+        <div class="card chapter-card shadow-sm">
+            <div class="card-body text-center">
+                <div class="chapter-icon">⚡</div>
+                <h4>Basic Electrical</h4>
+                <p>Practice important Basic Electrical MCQs.</p>
+                <a href="{% url 'trade_test' 'electrician' 'basic-electrical' %}"
+                   class="btn btn-primary start-btn w-100">
+                    Start Test →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Transformer -->
+    <div class="col-md-4">
+        <div class="card chapter-card shadow-sm">
+            <div class="card-body text-center">
+                <div class="chapter-icon">🔌</div>
+                <h4>Transformer</h4>
+                <p>Practice Transformer MCQs.</p>
+                <a href="#" class="btn btn-primary start-btn w-100">
+                    Start Test →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- DC Generator -->
+    <div class="col-md-4">
+        <div class="card chapter-card shadow-sm">
+            <div class="card-body text-center">
+                <div class="chapter-icon">⚙️</div>
+                <h4>DC Generator</h4>
+                <p>Practice DC Generator MCQs.</p>
+                <a href="#" class="btn btn-primary start-btn w-100">
+                    Start Test →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- DC Motor -->
+    <div class="col-md-4">
+        <div class="card chapter-card shadow-sm">
+            <div class="card-body text-center">
+                <div class="chapter-icon">🔄</div>
+                <h4>DC Motor</h4>
+                <p>Practice DC Motor MCQs.</p>
+                <a href="#" class="btn btn-primary start-btn w-100">
+                    Start Test →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- AC Motor -->
+    <div class="col-md-4">
+        <div class="card chapter-card shadow-sm">
+            <div class="card-body text-center">
+                <div class="chapter-icon">🌀</div>
+                <h4>AC Motor</h4>
+                <p>Practice AC Motor MCQs.</p>
+                <a href="#" class="btn btn-primary start-btn w-100">
+                    Start Test →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Measuring Instruments -->
+    <div class="col-md-4">
+        <div class="card chapter-card shadow-sm">
+            <div class="card-body text-center">
+                <div class="chapter-icon">📟</div>
+                <h4>Measuring Instruments</h4>
+                <p>Practice Instrument MCQs.</p>
+                <a href="#" class="btn btn-primary start-btn w-100">
+                    Start Test →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wiring -->
+    <div class="col-md-4">
+        <div class="card chapter-card shadow-sm">
+            <div class="card-body text-center">
+                <div class="chapter-icon">🏠</div>
+                <h4>Wiring</h4>
+                <p>Practice House Wiring MCQs.</p>
+                <a href="#" class="btn btn-primary start-btn w-100">
+                    Start Test →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Electrical Safety -->
+    <div class="col-md-4">
+        <div class="card chapter-card shadow-sm">
+            <div class="card-body text-center">
+                <div class="chapter-icon">🦺</div>
+                <h4>Electrical Safety</h4>
+                <p>Practice Safety MCQs.</p>
+                <a href="#" class="btn btn-primary start-btn w-100">
+                    Start Test →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Batteries -->
+    <div class="col-md-4">
+        <div class="card chapter-card shadow-sm">
+            <div class="card-body text-center">
+                <div class="chapter-icon">🔋</div>
+                <h4>Batteries</h4>
+                <p>Practice Battery MCQs.</p>
+                <a href="#" class="btn btn-primary start-btn w-100">
+                    Start Test →
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
